@@ -2,13 +2,38 @@ import React from 'react'
 import styled, {css, keyframes} from 'styled-components'
 import {setColor, setRem, setLetterSpacing, setBorder, media} from '../../styles'
 
+const fadeIn = (start, point, end) => {
+  const animation = keyframes`
+0%{
+ opacity:0;
+ transform:translateY(${start})
+}
+50%{
+ opacity:0.5;
+ transform:translateY(${point})
+}
+100%{
+ opacity:1;
+ transform:translateY(${end})
+}
+
+`;
+  return css`
+    animation: ${animation} 3s ease-in-out;
+  `;
+};
+
+
+
 const Banner = ({ className ,title, text, children, greeting }) => {
     return (
         <div className={className}>
 
             <h1>{greeting} <span>{title}</span></h1>
-            <div className="info"></div>
+            <div className="info">
             <p>{text}</p>
+            </div>
+            
             {children}
         </div>
     )
@@ -44,11 +69,11 @@ ${setBorder({width:"6px", color:setColor.primaryColor })};
 }`}
 
 h1{
-    /* Animation */
+    ${fadeIn("100%", "-10%", "0")}
 }
 
 .info {
-    /* animation */
+    ${fadeIn("-100%", "10%", "0")}
 }
 
 `
