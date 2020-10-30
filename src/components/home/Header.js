@@ -13,6 +13,9 @@ const Header = () => {
         <PrimaryBtn t="1rem">
         View Details
         </PrimaryBtn>
+         {/* <PrimaryBtn t="1rem" as="a" href="https://google.com">
+        View Details
+    </PrimaryBtn> */}
 
         </Banner>
       
