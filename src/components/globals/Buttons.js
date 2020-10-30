@@ -20,3 +20,7 @@ ${props => `margin: ${props.t || 0} ${props.r || 0} ${props.b || 0} ${props.l ||
 text-decoration: none;
 cursor: pointer;
 `
+
+export const SmallBtn = styled(PrimaryBtn)`
+padding:${setRem(9)} ${setRem(12)};
+`
