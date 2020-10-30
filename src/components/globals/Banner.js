@@ -32,9 +32,10 @@ const Banner = ({ className ,title, text, children, greeting }) => {
             <h1>{greeting} <span>{title}</span></h1>
             <div className="info">
             <p>{text}</p>
+            {children}
             </div>
             
-            {children}
+            
         </div>
     )
 }
